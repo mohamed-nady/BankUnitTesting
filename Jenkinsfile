@@ -9,8 +9,9 @@ pipeline {
         stage('Build') {
             steps {
                 bat "C:\\Tools\\nuget\\nuget.exe restore"
-				bat "C:\\Tools\\MSBuild\\14.0\\Bin\\amd64\\MSBuild.exe Bank\\Bank.csproj"
-				bat "C:\\Tools\\MSBuild\\14.0\\Bin\\amd64\\MSBuild.exe BankTest\\BankTest.csproj"
+				bat '"C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\MSBuild\\15.0\\Bin\\MSBuild.exe" Bank\\Bank.csproj'
+				bat '"C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\MSBuild\\15.0\\Bin\\MSBuild.exe" BankTest\\BankTest.csproj'
+
             }
         }
         stage('Test') {
